@@ -21,6 +21,12 @@ export default class CadastroClienteTitular extends Processo {
         let armazem = Armazem.InstanciaUnica
         armazem.Clientes.push(cliente)
 
+        let existe = armazem.Clientes.find(c => c.Nome === nome)
+        if (existe) {
+            console.log("Cliente já cadastrado")
+            return
+        }
+
         console.log('Finalizando o cadastro do cliente...')
     }
 }

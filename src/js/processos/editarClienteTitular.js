@@ -1,0 +1,29 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const processo_1 = __importDefault(require("../abstracoes/processo"));
+const armazem_1 = __importDefault(require("../dominio/armazem"));
+class editarClienteTitular extends processo_1.default {
+    processar() {
+        let armazem = armazem_1.default.InstanciaUnica;
+        let nomeCliente = this.entrada.receberTexto("Qual nome do cliente que vc deseja atualizar os dados?");
+        let cliente = armazem.Clientes.find(c => c.Nome === nomeCliente);
+        if (!cliente) {
+            console.log("Cliente não encontrado");
+            return;
+        }
+        let novoNome = this.entrada.receberTexto("Novo nome do cliente:");
+        if (novoNome)
+            cliente.Nome = novoNome;
+        let novoNomeSocial = this.entrada.receberTexto("Novo nome social do cliente:");
+        if (novoNomeSocial)
+            cliente.NomeSocial = novoNomeSocial;
+        let novaDataNascimento = this.entrada.receberData("Nova data de nascimento do cliente:\n Use DD/MM/AAAA");
+        if (novaDataNascimento)
+            cliente.DataNascimento = novaDataNascimento;
+        console.log('Atualizando o cadastro do cliente...');
+    }
+}
+exports.default = editarClienteTitular;
