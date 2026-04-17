@@ -3,7 +3,7 @@ import Armazem from "../dominio/armazem";
 import ImpressaorCliente from "../impressores/impressorCliente";
 import Impressor from "../interfaces/impressor";
 
-export default class ListagemDependentes extends Processo {
+export default class ListagemDependentesEspecifico extends Processo {
     private impressor!: Impressor
 
     processar(): void {
