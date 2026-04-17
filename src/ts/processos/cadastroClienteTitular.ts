@@ -1,6 +1,8 @@
 import Processo from "../abstracoes/processo";
 import Armazem from "../dominio/armazem";
 import Cliente from "../modelos/cliente";
+import Endereco from "../modelos/endereco";
+import Telefone from "../modelos/telefone";
 import CadastrarDocumentosCliente from "./cadastrarDocumentosCliente";
 import CadastroEnderecoTitular from "./cadastroEnderecoTitular";
 
@@ -26,6 +28,12 @@ export default class CadastroClienteTitular extends Processo {
             console.log("Cliente já cadastrado")
             return
         }
+
+        let ddd = this.entrada.receberTexto("DDD:")
+        let numero = this.entrada.receberTexto("Número de telefone:")
+
+        let telefone = new Telefone(ddd,numero)
+        cliente.Telefones.push(telefone)
 
         console.log('Finalizando o cadastro do cliente...')
     }
