@@ -1,7 +1,7 @@
 import Processo from "../abstracoes/processo";
 import MenuTipoListagemClientes from "../menus/menuTipoListagemClientes";
 import ListagemDependentesEspecifico from "./listagemDependentes";
-import ListagemTitularPorDependente from "./ListagemTitularDependenteEspecifico";
+import ListagemTitularPorDependente from "./listagemTitularDependenteEspecifico";
 import ListagemTitulares from "./listagemTitulares";
 
 export default class TipoListagemClientes extends Processo {

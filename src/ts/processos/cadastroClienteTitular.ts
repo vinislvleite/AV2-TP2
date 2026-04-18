@@ -4,7 +4,7 @@ import Cliente from "../modelos/cliente";
 import Endereco from "../modelos/endereco";
 import Telefone from "../modelos/telefone";
 import CadastrarDocumentosCliente from "./cadastrarDocumentosCliente";
-import CadastroEnderecoTitular from "./cadastroEnderecoTitular";
+import CadastroEnderecoTitular from "./cadastroEndereco";
 
 export default class CadastroClienteTitular extends Processo {
     processar(): void {

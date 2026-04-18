@@ -20,6 +20,7 @@ export default class TipoEditarCliente extends Processo {
                 break
             case 2:
                 this.processo = new editarClienteDependente()
+                this.processo.processar()
             default:
                 console.log('Opção não entendida :(')
         }
