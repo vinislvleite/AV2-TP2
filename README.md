@@ -1,4 +1,4 @@
-# AV2 - Gerenciamento de Clientes
+# AV2 - Atlantis
 
 Sistema orientado a objetos em TypeScript para gerenciamento de clientes titulares e dependentes, documentos, endereços e telefones, utilizando persistência em memória e navegação via terminal.
 
