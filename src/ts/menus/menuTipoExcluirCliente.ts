@@ -9,5 +9,7 @@ export default class MenuTipoExcluirCliente implements Menu {
         console.log(`| 1 - Titular`)
         console.log(`| 2 - Dependente`)
         console.log(`----------------------`)
+        console.log(`| 0 - Sair`)
+        console.log(`----------------------`)
     }
 }

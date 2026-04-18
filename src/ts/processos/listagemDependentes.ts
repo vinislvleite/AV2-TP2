@@ -8,7 +8,6 @@ export default class ListagemDependentesEspecifico extends Processo {
 
     processar(): void {
         console.clear()
-
         let armazem = Armazem.InstanciaUnica
 
         let nomeTitular = this.entrada.receberTexto("Nome do titular:")
@@ -16,6 +15,7 @@ export default class ListagemDependentesEspecifico extends Processo {
 
         if (!titular) {
             console.log("Titular não encontrado")
+            this.entrada.receberTexto("Pressione Enter para voltar...") // Pausa aqui
             return
         }
 
@@ -23,6 +23,7 @@ export default class ListagemDependentesEspecifico extends Processo {
 
         if (titular.Dependentes.length === 0) {
             console.log("Esse cliente não possui dependentes")
+            this.entrada.receberTexto("Pressione Enter para voltar...") // Pausa aqui
             return
         }
 
@@ -30,5 +31,7 @@ export default class ListagemDependentesEspecifico extends Processo {
             this.impressor = new ImpressaorCliente(dep)
             console.log(this.impressor.imprimir())
         })
+        
+        this.entrada.receberTexto("\nPressione Enter para voltar ao menu principal...")
     }
 }

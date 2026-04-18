@@ -1,10 +1,9 @@
 import Processo from "../abstracoes/processo";
 import Armazem from "../dominio/armazem";
 import Cliente from "../modelos/cliente";
-import Endereco from "../modelos/endereco";
 import Telefone from "../modelos/telefone";
 import CadastrarDocumentosCliente from "./cadastrarDocumentosCliente";
-import CadastroEnderecoTitular from "./cadastroEndereco";
+import CadastroEndereco from "./cadastroEndereco";
 
 export default class cadastrarClienteDependente extends Processo {
     processar(): void {
@@ -26,12 +25,13 @@ export default class cadastrarClienteDependente extends Processo {
         let dependente = new Cliente(nome, nomeSocial, data)
         titular.adicionarDependente(dependente)
 
-        this.processo = new CadastroEnderecoTitular(dependente)
+        this.processo = new CadastroEndereco(dependente)
         this.processo.processar()
         
         this.processo = new CadastrarDocumentosCliente(dependente)
         this.processo.processar()
 
+        console.log("Adicionando telefone:")
         let ddd = this.entrada.receberTexto("DDD:")
         let numero = this.entrada.receberTexto("Número de telefone:")
         
